@@ -1,40 +1,137 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Whiskers by whiskersapp</title>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Social Meow | Whiskers App</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+ 	<meta http-equiv="cleartype" content="on">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="skeleton/base.css">
+	<link rel="stylesheet" href="styles/whiskersapp.css">
+	<script src="js/whiskers-ui.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
 
-    <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Whiskers</h1>
-        <p></p>
+<div class="row wrapper">
+	<div class="row content-wrap">
+		<header id="branding">
+			<hgroup>
+				<h1><a href="/">Whiskers App</a></h1>
+				<h2>This is some kind of mission statement about Whiskers. These are kind of hard to write when it comes to getting them right but you get the point.</h2>
+			</hgroup>
+			<ul class="row">
+				<li class="btn"><a href="/">Download and Try It</a></li>
+				<li class="btn last"><a href="/">Fork it on Github</a></li>
+			</ul>
+			<p>Find out more about the project!</p>
+			<img src="images/whiskers-arrow.png" alt="Arrow pointing toward content" />
+		</header>	
+	</div>
+</div>
 
-        <p class="view"><a href="https://github.com/whiskersapp/whiskersapp">View the Project on GitHub. <small>whiskersapp/whiskersapp</small></a></p>
+<div class="container content-wrap">	
+	<article>
+		<div class="two-column row">
+			<div class="content">
+				<h1>what is whiskers?</h1>
+				<p>Lorem ipsum <a href="http://www.denimandsteel.com">dolor sit amet</a>, consectetur adipiscing elit. Curabitur ligula nisl, sodales id vestibulum non, gravida ut massa. Duis quis est malesuada turpis lobortis accumsan. Donec id arcu tellus, in dapibus leo. In condimentum nisl ante. Phasellus scelerisque nisi </p>
+				<h1>a heading</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ligula nisl, sodales id vestibulum non, gravida ut massa. Duis quis est malesuada turpis lobortis accumsan. Donec id arcu tellus, in dapibus leo. In condimentum nisl ante. Phasellus scelerisque nisi </p>
+				<ul>
+					<li>this is a content list</li>
+					<li>this is a content list</li>
+					<li>this is a content list</li>
+				</ul>
+				<h1>a heading</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ligula nisl, sodales id vestibulum non, gravida ut massa. Duis quis est malesuada turpis lobortis accumsan. Donec id arcu tellus, in dapibus leo. In condimentum nisl ante. Phasellus scelerisque nisi </p>
+			</div>
+			<aside>
+				<div class="image-grid">
+					<img src="temp/image-medium.png" alt="My image" />
+					<a href=""><img src="temp/image-medium.png" alt="My image" /></a>
+					<img src="temp/image-medium.png" alt="My image" />
+				</div>
+			</aside>
+		</div>
+		
+		<hr />
 
-      </header>
-      <section>
-        <h3>Welcome to GitHub Pages.</h3>
+		<section class="one-column row">
+			<div class="content">
+				<h1>plan &amp; status</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ligula nisl, sodales id vestibulum non, gravida ut massa. Duis quis est malesuada turpis lobortis accumsan. Donec id arcu tellus, in dapibus leo. In condimentum nisl ante. Phasellus scelerisque nisi.</p>
+				<form class="row" id="notify-me">
+					<label for="notifyme" class="is-hidden">Enter your email address</label>
+					<input type="email" name="notifyme" placeholder="enter your email address">
+					<input type="submit" value="Notify Me!">
+				</form>
+				<div class="image-grid">
+					<img src="temp/image-small.png" alt="My image" />
+					<a href="/"><img src="temp/image-small.png" alt="My image" /></a>
+					<img src="temp/image-small.png" alt="My image" class="last" />
+				</div>
+			</div>
+		</section>
+		
+		<hr />
+		
+		<section class="two-column narrow row">
+			<div class="content">
+				<h1>build with whiskers</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ligula nisl, sodales id vestibulum non, gravida ut massa. Duis quis est malesuada turpis lobortis accumsan. Donec id arcu tellus, in dapibus leo. In condimentum nisl ante. Phasellus scelerisque nisi.</p>
+			</div>
+			<aside>
+				<div class="btn multiline">
+					<a href="/">Fork it on Github</a>
+				</div>
+				<div class="btn">
+					<a href="/">Contact</a>
+				</div>
+			</aside>
+		</section>
+		
+		<hr />
+		
+		<section class="two-column narrow row">
+			<div class="content">
+				<h1>download</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit.</p>
+			</div>
+			<aside>
+				<div class="btn">
+					<a href="/">Download</a>
+				</div>
+			</aside>
+		</section>
+	</article>
+	<div id="sidebar">
+		<nav id="primary">
+			<ul>
+				<li><a href="" class="active">what is whiskers?</a></li>
+				<li><a href="">plan &amp; status</a></li>
+				<li><a href="">build with whiskers</a></li>
+				<li><a href="">download</a></li>
+			</ul>
+		</nav>
+	</div>
+</div>
+	
+	
+<div class="wrapper">
+	<div class="row content-wrap">	
+		<footer class="row">&copy; 2012 Larry Halff</footer>
+	</div>
+</div>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/whiskersapp">whiskersapp</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    
-  </body>
+<!-- Hey, GA setup don't forget -->
+</body>
 </html>
