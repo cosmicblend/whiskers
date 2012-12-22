@@ -3,7 +3,7 @@ v0.8 Alpha May, 2012
 
 Greetings. Whiskers is here to make your make your social network a little more beautiful and a little more safe.
 
-## What Is Whiskers?
+## What Is Whiskers???
 
 Whiskers is your self-hosted social media home base. Once set up and linked to supported social media accounts, you can use it to efficiently post updates to those accounts.
 
