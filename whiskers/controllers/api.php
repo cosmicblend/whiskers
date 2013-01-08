@@ -8,7 +8,7 @@ class Api extends CI_Controller {
     {
         parent::__construct();
 
-        // Dependecies
+        // Dependencies
         $this->load->helper('url');
         $this->load->helper('whiskers');
         $this->load->library('session');
