@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
     {
         parent::__construct();
 
-        // Dependecies
+        // Dependencies
         $this->load->helper('url');
         $this->load->helper('whiskers');
         $this->load->library('session');
@@ -63,6 +63,91 @@ class Admin extends CI_Controller {
         }
     }
 
+
+
+    /**
+     * App.net
+     * Authenticate using OAUTH2 Spark
+     */
+    public function appnet_connect()
+    {
+        $this->load->helper('url');
+        $this->load->spark('oauth2/0.4.0');
+
+
+        $appnet_settings = $this->settings->get('appnet');
+
+        if ( ! is_object($appnet_settings)
+            && ! isset($appnet_settings->appnet_consumer_key)
+            && ! isset($appnet_settings->appnet_consumer_secret))
+        {
+            redirect('/admin/appnet_app'); // not authenticated so go do it
+        }
+        
+        // Load local config
+        $consumer_key = $appnet_settings->appnet_consumer_key;
+        $consumer_secret = $appnet_settings->appnet_consumer_secret;
+
+        /* Build TwitterOAuth object with client credentials. */
+        
+		$provider = $this->oauth2->provider('appnet', array(
+			'id' => $consumer_key,
+			'secret' => $consumer_secret
+		));	        
+
+		if (!$this->input->get('code')) {
+
+			$url = $provider->authorize();
+			redirect($url);			
+		}
+			
+		// Creating an access token from the code
+		$appnet_settings->token = $provider->access($this->input->get('code'));
+
+
+//		$token = $provider->access($_GET['code']);
+
+		// Use this object to try and get some user details (username, full name, etc)
+		$appnet_settings->user = $provider->get_user_info($appnet_settings->token);
+
+		// Look for a user
+          
+            $this->settings->rm('appnet');
+            $this->settings->set('appnet', array(
+                'token' => $appnet_settings->token,
+                'appnet_consumer_key' => $consumer_key,
+                'appnet_consumer_secret' => $consumer_secret,
+                'user' => $appnet_settings->user
+            ));
+            
+            $this->session->setMessage('Successfully authorized Appnet.', 'success');
+
+            redirect('/admin');            
+    }
+    
+    
+   /**
+     * Form for app info
+     */
+    public function appnet_app()
+    {
+		// First time through, this is blank so display the form for the user
+        $appnet_app = $this->input->post(NULL, TRUE);
+    
+        if ($appnet_app)
+        {
+			// 2nd time through we have user data so redirect
+            $this->settings->update('appnet', $appnet_app);
+            redirect('/admin/appnet_connect');
+        }
+    
+        // Show form
+        $this->data['old_consumer_key'] = isset($appnet_settings->appnet_consumer_key) ? $appnet_settings->$old_consumer_key : '';
+        $this->data['old_consumer_secret'] = isset($appnet_settings->appnet_consumer_secret) ? $appnet_settings->appnet_consumer_secret : '';
+    
+        $this->_parse_template('admin/appnet_app');
+    }
+    
 
     /**
      * Twitter OAuth
@@ -329,6 +414,7 @@ class Admin extends CI_Controller {
         $this->load->view('base', $this->data);
     }
 }
+
 
 /* End of file whiskers_frontend.php */
 /* Location: ./application/controllers/whiskers_frontend.php */
