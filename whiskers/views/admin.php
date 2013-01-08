@@ -1,7 +1,7 @@
 <h2>Accounts</h2>
-
+<?php //print_r($available_drivers); ?>
 <form id="add_service" action="<?php echo site_url("admin/account_connect"); ?>" method="post">
-    <p>Add an a account for</p>
+    <p>Add an account for</p>
 
     <select name="add[driver]">
     <?php if (isset($available_drivers)) : foreach ($available_drivers as $driver) : ?>
@@ -14,7 +14,7 @@
 </form>
 
 <p>Depending on the account, you'll be asked for a user name and password, or sent to the account's website to sign in and authorize <em>Whiskers App</em>.</p>
-
+<?php //print_r($valid_drivers); //valid = running ?>
 <h3>Current Accounts</h3>
 <?php if ($valid_drivers) : ?>
 <?php foreach ($valid_drivers as $driver => $obj): ?>
@@ -29,6 +29,10 @@
         <a href="<?php echo $obj->user->link ?>"><?php echo $obj->user->name ?></a>
     <?php endif; ?>
 
+    <?php if('appnet' === $driver) : ?>
+        <h4><?php echo ucwords($driver) ?></h4>
+        <a href="https://alpha.app.net/<?php echo $obj->user->nickname ?>"><?php echo $obj->user->name ?></a>
+    <?php endif; ?>
 
     <form id="remove_service" action="<?php echo site_url('admin'); ?>" method="post" style="float:right">
     <input type="hidden" name="rm[driver]" value="<?php echo $driver; ?>" />
