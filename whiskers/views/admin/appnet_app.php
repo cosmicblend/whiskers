@@ -11,7 +11,7 @@
         <li>Click "Create An App".</li>
         <li>Fill in the Name field with something like "John's Whiskers"</li>
         <li>Add a website url (the current url if you'd like).</li>
-        <li>Enter your callback url: <strong><?php print site_url('admin/appnet_callback'); ?></strong></li>
+        <li>Enter your callback url: <strong><?php print site_url('admin/appnet_connect'); ?></strong></li>
         <li>Save the app and copy the "Client ID" and "Client Secret" to Whiskers. You should be good to go!</li>
     </ul>
 
