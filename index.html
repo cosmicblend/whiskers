@@ -8,12 +8,13 @@
 	<title>Whiskers by whiskersapp</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  	<meta name="MobileOptimized" content="width">
+  	<meta name="HandheldFriendly" content="true">
  	<meta http-equiv="cleartype" content="on">
  	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="skeleton/base.css">
 	<link rel="stylesheet" href="styles/whiskersapp.css">
-	<script src="js/whiskers-ui.js"></script>
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -23,17 +24,19 @@
 
 <div class="row wrapper">
 	<div class="row content-wrap">
-		<header id="branding">
+		<header class="branding">
 			<hgroup>
 				<h1><a href="/">Whiskers App</a></h1>
 				<h2>This is some kind of mission statement about Whiskers. These are kind of hard to write when it comes to getting them right but you get the point.</h2>
 			</hgroup>
 			<ul class="row">
-				<li class="btn"><a href="https://github.com/whiskersapp/whiskersapp/archive/master.zip">Download and Try It</a></li>
-				<li class="btn last"><a href="https://github.com/whiskersapp/whiskersapp">Fork it on Github</a></li>
+				<li class="btn hide-for-touch"><a href="/">Download and Try It</a></li>
+				<li class="btn last hide-for-touch"><a href="/">Fork it on Github</a></li>
 			</ul>
-			<p>Find out more about the project!</p>
-			<img src="images/whiskers-arrow.png" alt="Arrow pointing toward content" />
+			<div class="arrow-wrap">
+				<p>Find out more about the project!</p>
+				<img src="images/whiskers-arrow.png" alt="Arrow pointing toward content" />
+			</div>
 		</header>	
 	</div>
 </div>
@@ -55,7 +58,7 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ligula nisl, sodales id vestibulum non, gravida ut massa. Duis quis est malesuada turpis lobortis accumsan. Donec id arcu tellus, in dapibus leo. In condimentum nisl ante. Phasellus scelerisque nisi </p>
 			</div>
 			<aside>
-				<div class="image-grid">
+				<div class="image-grid medium">
 					<img src="temp/image-medium.png" alt="My image" />
 					<a href=""><img src="temp/image-medium.png" alt="My image" /></a>
 					<img src="temp/image-medium.png" alt="My image" />
@@ -74,9 +77,9 @@
 					<input type="email" name="notifyme" placeholder="enter your email address">
 					<input type="submit" value="Notify Me!">
 				</form>
-				<div class="image-grid">
+				<div class="image-grid small">
 					<img src="temp/image-small.png" alt="My image" />
-					<a href="/"><img src="temp/image-small.png" alt="My image" /></a>
+					<img src="temp/image-small.png" alt="My image" />
 					<img src="temp/image-small.png" alt="My image" class="last" />
 				</div>
 			</div>
@@ -101,7 +104,7 @@
 		
 		<hr />
 		
-		<section class="two-column narrow row">
+		<section class="two-column narrow row hide-for-touch">
 			<div class="content">
 				<h1><a name="download">download</a></h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit.</p>
@@ -113,13 +116,13 @@
 			</aside>
 		</section>
 	</article>
-	<div id="sidebar">
+	<div id="sidebar" data-spy="affix" data-offset-top="534">
 		<nav id="primary">
 			<ul>
-				<li><a href="#whatiswhiskers" class="active">what is whiskers?</a></li>
+				<li><a href="#whatiswhiskers">what is whiskers?</a></li>
 				<li><a href="#planandstatus">plan &amp; status</a></li>
 				<li><a href="#buildwithwhiskers">build with whiskers</a></li>
-				<li><a href="#download">download</a></li>
+				<li class="last hide-for-touch"><a href="#download">download</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -131,7 +134,10 @@
 		<footer class="row">&copy; 2012 Larry Halff</footer>
 	</div>
 </div>
-
 <!-- Hey, GA setup don't forget -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/whiskers-ui.js"></script>
 </body>
 </html>

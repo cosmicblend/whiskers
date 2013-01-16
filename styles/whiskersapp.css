@@ -39,15 +39,14 @@ input[type="email"] { font:100%/1.5 "edmondsans_regularregular", Arial, sans-ser
 
 h1, h2, h3, h4, h5, h6 { font-family:"edmondsans_regularregular", Arial, serif }
 
-footer { font:18px "edmondsans_mediumregular", Arial, sans-serif; text-align:center }
+footer { font:1.125em "edmondsans_mediumregular", Arial, sans-serif; text-align:center }
 
-#branding h2,
+.branding h2,
 input[type="submit"],
 input[type="submit"]:hover,
 .btn a { font-family:"edmondsans_mediumregular", Arial, sans-serif }
 
-#branding p,
-#sidebar #primary a.active { font-family:"edmondsans_boldregular", Arial, sans-serif }
+.branding p { font-family:"edmondsans_boldregular", Arial, sans-serif }
 
 /* --------------------------- 
 Base extended: 
@@ -79,28 +78,28 @@ body { color:rgb(61,61,62) }
 
 h1, h2, h3, h4, h5, h6 { /*Font family set in fonts section*/ font-weight:normal; color:rgb(91,91,92) }
 
-h1 { font-size:36px; line-height:42px }
-h2 { font-size:24px; line-height:30px }
-h3 { font-size:16px; font-weight:bold; line-height:20px }
-h4 { font-size:14px }
-h5 { font-size:12px }
-h6 { font-size:12px }
+h1 { font-size:2.25em; line-height:1.3em }
+h2 { font-size:1.5em; line-height:1.875em }
+h3 { font-size:1em; font-weight:bold; line-height:1.25em }
+h4 { font-size:0.875em }
+h5 { font-size:0.75em }
+h6 { font-size:0.75em }
 
-p { margin:0 0 32px 0 }
+p { margin:0 0 2em 0 }
 ul + h1,
 ol + h1,
-dl + h1 { margin-top:40px }
+dl + h1 { margin-top:0.94em }
 
-blockquote, blockquote p { font-size:16px; line-height:24px }
-blockquote { margin:0 0 24px; padding:9px 20px 0 19px; border-left:1px solid #ddd } /* check this */
+blockquote, blockquote p { font-size:1em; line-height:1.5em }
+blockquote { margin:0 0 1.5em; padding:0.5625em 1.25em 0 1.1875em; border-left:1px solid #ddd } /* check this */
 
 article ul,
-article ol { list-style-type:disc; margin-left:20px }
+article ol { list-style-type:disc; margin-left:1.25em }
 
 input[type="submit"] { 
 	border:none;
 	text-shadow:none; 
-	font-size:16px; 
+	font-size:1em; 
 	font-weight:normal; 
 	margin-bottom:0 }
 input[type="submit"]:hover { border:none }
@@ -108,40 +107,26 @@ input[type="submit"]:hover { border:none }
 input[type="text"],
 input[type="textarea"],
 input[type="email"] { 
+	width:13.753em;
 	margin-bottom:0; 
-	padding:11px 10px 10px 10px; 
+	padding:0.6875em 0.625em 0.625em 0.625em; 
 	color:rgb(61,61,62);
 	/*Font family set in fonts section*/ }	
-
+	
 /* ------------------------
 Layout 
 ------------------------ */
 body { text-align:center }
-.content-wrap { margin:0 auto; text-align:left; width:960px; }
-.container { margin-top:68px; }
+.content-wrap { margin:0 auto; text-align:left; min-width:20em; max-width:60em }
+.container { margin-top:4.25em }
 
-header { padding:44px 0 }
+header { padding:2.75em 0 }
 
-article { width:740px; float:right }
-	.one-column { padding:0 50px 0 40px }
-	.two-column { }
-	.two-column .content { width:310px; float:left; padding:0 40px }
-	.two-column aside { width:310px; float:right; padding:0 40px 0 0 }
-		.narrow .content { width:440px }
-		.narrow aside { margin-right:10px; width:170px }
-	hr { width:860px; margin:0 0 48px -170px }
+article { padding:1.25em; }
 
-#sidebar { width:220px }
-	#primary ul { padding:8px 20px 8px 20px }
-	#primary li { margin:0; padding:0 }
-	#primary li a { border-bottom:1px solid rgb(97,97,97); padding:8px 0 }
-	#primary li:last-child a { border-bottom:0 }
-	
-form { margin-bottom:48px }
-	label { color:rgb(91,91,92); font-size:18px }
-	input[type="text"],
-	input[type="textarea"],
-	input[type="email"] { width:100%; margin-top:2px; font-size:18px }
+form { margin-bottom:3em }
+
+div[id="sidebar"] { display:none }
 
 /* ------------------------ 
 Theme 
@@ -150,59 +135,64 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { text-decoration:none }
 
 header,
 footer,
-#sidebar,
+nav[id="primary"],
 .wrapper { color:rgb(255,255,255); background:rgb(59,59,60) }
 
-footer { padding:27px 0 }
+footer { padding:1.6875em 0 }
 
-#branding { position:relative; padding:44px 260px 25px 260px; text-align:center; font-size:18px }
+.branding { position:relative; padding:2.75em 1.25em 1.5625em 1.25em; text-align:center; font-size:1.125em }
 
-#branding h1 a { 
+.branding h1 a { 
 	display:block;
-	margin:0 0 53px 53px;
+	margin:0 0 1em 0;
 	text-indent:-999em;
 	color:rgb(255,255,255);
-	width:371px;
-	height:127px;
-	background:url('../images/whiskers-logo.png') top left no-repeat }
+	width:100%;
+	height:63px;
+	background:url('../images/whiskers-logo.png') top left no-repeat;
+	background-size:185px 63px;
+	background-position:center }
 
-#branding h2,
-#branding ul { margin-bottom:48px }
+.branding h2,
+.branding ul { margin-bottom:2.7em }
 
-#branding h2 {  
-	font-size:18px; 
+.branding h2 {  
+	font-size:1em; 
 	line-height:1.3em; 
 	color:rgb(255,255,255) }
 	
-#branding ul li { margin:0; float:left }
-#branding ul li.last { float:right }
+.branding ul li { margin:0 }
+.branding ul li.last { margin-top:1.25em }
 
-#branding img { position:absolute; bottom:-54px; left:537px; }
+.branding .arrow-wrap { height:3.5em }
+.branding img { position:relative; top:-1.25em; right:-4.25em }
 
 /* ------------------------ 
 Modules 
 -------------------------*/
-#notify-me input[type="submit"] { float:right }
-#notify-me input[type="text"],
-#notify-me input[type="email"] { width:438px; float:left }
+form[id="notify-me"] input[type="text"],
+form[id="notify-me"] input[type="email"] { margin-bottom:1.25em; float:left }
 
-.image-grid img { margin:0 40px 41px 0 }
-.image-grid img.last,
-aside .image-grid img { margin:0 0 41px 0 }
+.image-grid.small,
+.image-grid.medium,
+.image-grid.large { text-align:center }
 
-/* ------------------------ 
-Uniques  
------------------------- */
+.image-grid.medium { width:17.5em; margin:0 auto }
+
+.image-grid img { margin:0 0 2.5625em 0 }
+
+.small img { width:10.9375em; height:10.9375em }
+.medium img { width:17.5em; height:17.5em }
 
 /* ------------------------ 
 States 
 ------------------------ */
 form, 
 .btn, 
-.btn a { -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px }
+.btn a { -webkit-border-radius:0.1875em; -moz-border-radius:0.1875em; border-radius:0.1875em }
 
-form, 
-.btn { padding:20px; background:rgb(237,237,237) }
+form,
+.btn { padding:1.25em; background:rgb(237,237,237) }
 
 input[type="submit"],
 input[type="submit"]:hover,
@@ -214,11 +204,11 @@ input[type="submit"]:hover,
 	background:-ms-linear-gradient(top, #707070, #414141);
 	background:-o-linear-gradient(top, #707070, #414141);
 	display:block;
-	padding:15px 20px;
+	padding:0.9375em 1.25em;
 	text-align:center; 
 	color:rgb(255,255,255);
 	text-decoration:none; 
-	line-height:20px }
+	line-height:1.25em }
 	
 input[type="submit"]:hover,
 .btn a:hover {
@@ -230,22 +220,21 @@ input[type="submit"]:hover,
 	background:-o-linear-gradient(top, #484848, #191919) }
 
 /* buttons */
-.btn { margin-bottom:32px }
-.btn.multiline a { padding:5px 20px }
+.btn { margin-bottom:2em }
 	
-#branding .btn { padding:0; background:rgb(59,59,60) }
-#branding .btn a {
-	width:210px; 
+.branding .btn { padding:0; background:rgb(59,59,60) }
+.branding .btn a {
 	background:#e3e3e3; 
 	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#e3e3e3));
 	background:-webkit-linear-gradient(top, #e3e3e3, #ffffff);
 	background:-moz-linear-gradient(top, #e3e3e3, #ffffff); 
 	background:-ms-linear-gradient(top, #e3e3e3, #ffffff);
 	background:-o-linear-gradient(top, #e3e3e3, #ffffff);
-	padding:15px 0; 
-	color:rgb(59,59,60);  }
+	padding:0.83em 0; 
+	color:rgb(59,59,60);
+	line-height:1.12em  }
 	
-#branding .btn a:hover {
+.branding .btn a:hover {
 	background:#e3e3e3;
 	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#d9d9d9));
 	background:-webkit-linear-gradient(top, #e3e3e3, #d9d9d9);
@@ -254,270 +243,101 @@ input[type="submit"]:hover,
 	background:-o-linear-gradient(top, #e3e3e3, #d9d9d9) }
 
 /* forms */	
-input[type="submit"] { width:130px; }
+input[type="submit"] { width:100% }
 
 /* primary menu */
-#sidebar #primary a { display:block; color:rgb(255,255,255); text-decoration:none }
+nav[id="primary"] a { display:block; color:rgb(255,255,255); text-decoration:none }
 
-/* Javascript joints */
-.is-hidden { display:none }/* ---------
-Font Settings
---------- */
-@font-face {
-    font-family:'edmondsans_regularregular';
-    src: url('../fonts/edmondsans-regular-webfont.eot');
-    src: url('../fonts/edmondsans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/edmondsans-regular-webfont.woff') format('woff'),
-         url('../fonts/edmondsans-regular-webfont.ttf') format('truetype'),
-         url('../fonts/edmondsans-regular-webfont.svg#edmondsans_regularregular') format('svg');
-    font-weight:normal;
-    font-style:normal }
+/* javascript joints */
+.is-hidden { display:none }
 
-@font-face {
-    font-family: 'edmondsans_mediumregular';
-    src: url('../fonts/edmondsans-medium-webfont.eot');
-    src: url('../fonts/edmondsans-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/edmondsans-medium-webfont.woff') format('woff'),
-         url('../fonts/edmondsans-medium-webfont.ttf') format('truetype'),
-         url('../fonts/edmondsans-medium-webfont.svg#edmondsans_mediumregular') format('svg');
-    font-weight:normal;
-    font-style:normal }
-    
-@font-face {
-    font-family: 'edmondsans_boldregular';
-    src: url('../fonts/edmondsans-bold-webfont.eot');
-    src: url('../fonts/edmondsans-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/edmondsans-bold-webfont.woff') format('woff'),
-         url('../fonts/edmondsans-bold-webfont.ttf') format('truetype'),
-         url('../fonts/edmondsans-bold-webfont.svg#edmondsans_boldregular') format('svg');
-    font-weight: normal;
-    font-style: normal }
-    
-/* Global font settings */
-body,
-input[type="text"],
-input[type="textarea"],
-input[type="email"] { font:100%/1.5 "edmondsans_regularregular", Arial, sans-serif }
+.hide-for-touch { display:none; }
+.no-touch .hide-for-touch { display:block; }
 
-h1, h2, h3, h4, h5, h6 { font-family:"edmondsans_regularregular", Arial, serif }
+.affix { position:fixed; top:4.4375em }
 
-footer { font:18px "edmondsans_mediumregular", Arial, sans-serif; text-align:center }
-
-#branding h2,
-input[type="submit"],
-input[type="submit"]:hover,
-.btn a { font-family:"edmondsans_mediumregular", Arial, sans-serif }
-
-#branding p,
-#sidebar #primary a.active { font-family:"edmondsans_boldregular", Arial, sans-serif }
-
-/* --------------------------- 
-Base extended: 
-Bones from skeleton
---------------------------- */
-/* Self Clearing Goodness */
-.container:after { content:"\0020"; display:block; height:0; clear:both; visibility:hidden }
-
-/* Use clearfix class on parent to clear nested columns, or wrap each row of columns in a <div class="row"> */
-.clearfix:before,
-.clearfix:after,
-.row:before,
-.row:after { content:'\0020'; display:block; overflow:hidden; visibility:hidden; width:0; height:0 }
-    
-.row:after,
-.clearfix:after { clear:both }
-    
-.row,
-.clearfix { zoom:1 }
-
-/* You can also use a <br class="clear" /> to clear columns */
-.clear { clear:both; display:block; overflow:hidden; visibility:hidden; width:0; height:0 }
-
-/* ----------------------------
-Base overrides:
-Defined in skeleton/base.css 
----------------------------- */
-body { color:rgb(61,61,62) }
-
-h1, h2, h3, h4, h5, h6 { /*Font family set in fonts section*/ font-weight:normal; color:rgb(91,91,92) }
-
-h1 { font-size:36px; line-height:42px }
-h2 { font-size:24px; line-height:30px }
-h3 { font-size:16px; font-weight:bold; line-height:20px }
-h4 { font-size:14px }
-h5 { font-size:12px }
-h6 { font-size:12px }
-
-p { margin:0 0 32px 0 }
-ul + h1,
-ol + h1,
-dl + h1 { margin-top:40px }
-
-blockquote, blockquote p { font-size:16px; line-height:24px }
-blockquote { margin:0 0 24px; padding:9px 20px 0 19px; border-left:1px solid #ddd } /* check this */
-
-article ul,
-article ol { list-style-type:disc; margin-left:20px }
-
-input[type="submit"] { 
-	border:none;
-	text-shadow:none; 
-	font-size:16px; 
-	font-weight:normal; 
-	margin-bottom:0 }
-input[type="submit"]:hover { border:none }
-
-input[type="text"],
-input[type="textarea"],
-input[type="email"] { 
-	margin-bottom:0; 
-	padding:11px 10px 10px 10px; 
-	color:rgb(61,61,62);
-	/*Font family set in fonts section*/ }	
-
-/* ------------------------
-Layout 
+/* ------------------------ 
+Media Queries
 ------------------------ */
-body { text-align:center }
-.content-wrap { margin:0 auto; text-align:left; width:960px; }
-.container { margin-top:68px; }
-
-header { padding:44px 0 }
-
-article { width:740px; float:right }
-	.one-column { padding:0 50px 0 40px }
-	.two-column { }
-	.two-column .content { width:310px; float:left; padding:0 40px }
-	.two-column aside { width:310px; float:right; padding:0 40px 0 0 }
-		.narrow .content { width:440px }
-		.narrow aside { margin-right:10px; width:170px }
-	hr { width:860px; margin:0 0 48px -170px }
-
-#sidebar { width:220px }
-	#primary ul { padding:8px 20px 8px 20px }
-	#primary li { margin:0; padding:0 }
-	#primary li a { border-bottom:1px solid rgb(97,97,97); padding:8px 0 }
-	#primary li:last-child a { border-bottom:0 }
-	
-form { margin-bottom:48px }
-	label { color:rgb(91,91,92); font-size:18px }
+@media all and (min-width:321px) {
 	input[type="text"],
 	input[type="textarea"],
-	input[type="email"] { width:100%; margin-top:2px; font-size:18px }
-
-/* ------------------------ 
-Theme 
------------------------- */
-header,
-footer,
-#sidebar,
-.wrapper { color:rgb(255,255,255); background:rgb(59,59,60) }
-
-footer { padding:27px 0 }
-
-#branding { position:relative; padding:44px 260px 25px 260px; text-align:center; font-size:18px }
-
-#branding h1 a { 
-	display:block;
-	margin:0 0 53px 53px;
-	text-indent:-999em;
-	color:rgb(255,255,255);
-	width:371px;
-	height:127px;
-	background:url('../images/whiskers-logo.png') top left no-repeat }
-
-#branding h2,
-#branding ul { margin-bottom:48px }
-
-#branding h2 {  
-	font-size:18px; 
-	line-height:1.3em; 
-	color:rgb(255,255,255) }
+	input[type="email"] { margin-top:3px }
 	
-#branding ul li { margin:0; float:left }
-#branding ul li.last { float:right }
+	hr { display:none }
 
-#branding img { position:absolute; bottom:-54px; left:537px; }
+	.image-grid.small { width:28.75em; margin:0 auto; text-align:left }
+	.small img { margin:0 1.25em 2.5625em 1.25em }
+}
 
-/* ------------------------ 
-Modules 
--------------------------*/
-#notify-me input[type="submit"] { float:right }
-#notify-me input[type="text"],
-#notify-me input[type="email"] { width:438px; float:left }
+@media all and (min-width:479px) {
+	form[id="notify-me"] input[type="submit"] { float:left }
+	form[id="notify-me"] input[type="text"],
+	form[id="notify-me"] input[type="email"] { margin-right:1.25em; margin-bottom:0 }
 
-.image-grid img { margin:0 40px 41px 0 }
-.image-grid img.last,
-aside .image-grid img { margin:0 0 41px 0 }
+	input[type="submit"] { width:8.125em }
+}
 
-/* ------------------------ 
-Uniques  
------------------------- */
-
-/* ------------------------ 
-States 
------------------------- */
-form, 
-.btn, 
-.btn a { -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px }
-
-form, 
-.btn { padding:20px; background:rgb(237,237,237) }
-
-input[type="submit"],
-input[type="submit"]:hover,
-.btn a { 
-	background:#414141; 
-	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#707070), to(#414141));
-	background:-webkit-linear-gradient(top, #707070, #414141);
-	background:-moz-linear-gradient(top, #707070, #414141); 
-	background:-ms-linear-gradient(top, #707070, #414141);
-	background:-o-linear-gradient(top, #707070, #414141);
-	display:block;
-	padding:15px 20px;
-	text-align:center; 
-	color:rgb(255,255,255);
-	text-decoration:none; 
-	line-height:20px }
+@media all and (min-width:767px) {
+	.content-wrap { width:48em }
 	
-input[type="submit"]:hover,
-.btn a:hover {
-	background:#414141; 
-	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#484848), to(#191919));
-	background:-webkit-linear-gradient(top, #484848, #191919);
-	background:-moz-linear-gradient(top, #484848, #191919); 
-	background:-ms-linear-gradient(top, #484848, #191919);
-	background:-o-linear-gradient(top, #484848, #191919) }
+	article { width:27.375em; padding:0 3.125em 0 0; float:right }
 
-/* buttons */
-.btn { margin-bottom:32px }
-.btn.multiline a { padding:5px 20px }
+	div[id="sidebar"] { display:block; width:13.75em }
+		nav[id="primary"] ul { padding:0.5em 1.25em 0.5em 1.25em }
+		nav[id="primary"] li { margin:0; padding:0 }
+		nav[id="primary"] li a { border-bottom:1px solid rgb(97,97,97); padding:8px 0 }
+		nav[id="primary"] li.last a { border-bottom:0 !important; }
+		
+	form { margin-bottom:3em }
+		label { color:rgb(91,91,92); font-size:1.125em }
+		input[type="text"],
+		input[type="textarea"],
+		input[type="email"] { width:100%; margin-top:0; font-size:1.125em }
+
+	.branding { padding:2.42em 20% 1.5625em 20% }
+
+	.branding h1 a { 
+		margin:0 auto 1.472em auto;
+		width:371px;
+		height:127px;
+		background:url('../images/whiskers-logo.png') top left no-repeat;
+		background-size:contain;
+		background-position:center }
+		
+	.no-touch .branding ul li { margin:0; float:left }
+	.no-touch .branding ul li.last { float:right }
+	.no-touch .branding .btn a { width:11.67em }
 	
-#branding .btn { padding:0; background:rgb(59,59,60) }
-#branding .btn a {
-	width:210px; 
-	background:#e3e3e3; 
-	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#e3e3e3));
-	background:-webkit-linear-gradient(top, #e3e3e3, #ffffff);
-	background:-moz-linear-gradient(top, #e3e3e3, #ffffff); 
-	background:-ms-linear-gradient(top, #e3e3e3, #ffffff);
-	background:-o-linear-gradient(top, #e3e3e3, #ffffff);
-	padding:15px 0; 
-	color:rgb(59,59,60);  }
+	form[id="notify-me"] input[type="submit"] { float:right }
+	form[id="notify-me"] input[type="text"],
+	form[id="notify-me"] input[type="email"] { width:12.4em; margin-right:0; margin-bottom:0  }	
 	
-#branding .btn a:hover {
-	background:#e3e3e3;
-	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#d9d9d9));
-	background:-webkit-linear-gradient(top, #e3e3e3, #d9d9d9);
-	background:-moz-linear-gradient(top, #e3e3e3, #d9d9d9); 
-	background:-ms-linear-gradient(top, #e3e3e3, #d9d9d9);
-	background:-o-linear-gradient(top, #e3e3e3, #d9d9d9) }
+	.image-grid.small,
+	.image-grid.medium { margin:0; text-align:left }
+	
+	.image-grid.small { width:100%; padding-left:0 }
+	
+	.small img { margin:0 2.3125em 2.5625em 0 }		
+}
 
-/* forms */	
-input[type="submit"] { width:130px; }
-
-/* primary menu */
-#sidebar #primary a { display:block; color:rgb(255,255,255); text-decoration:none }
-
-/* Javascript joints */
-.is-hidden { display:none }
+@media all and (min-width:959px) {
+	.content-wrap { width:60em }
+	
+	article { width:46.25em; padding:0 }
+		.one-column { padding:0 3.125em 0 2.5em }
+		.two-column .content { width:19.375em; float:left; padding:0 2.5em }
+		.two-column aside { width:19.375em; float:right; padding:0 2.5em 0 0 }
+			.narrow .content { width:27.5em }
+			.narrow aside { margin-right:0.625em; width:10.625em }
+		hr { display:block; width:56.75em; margin:0 0 3em -13.65em }
+		
+	.branding { padding:2.42em 14.45em 1.5625em 14.45em }
+		
+	form[id="notify-me"] input[type="text"],
+	form[id="notify-me"] input[type="email"] { width:24.25em; float:left }
+	
+	.image-grid.small { width:100%; padding-left:0 }
+	
+	.btn.multiline a { padding:0.3125em 1.25em }
+}
