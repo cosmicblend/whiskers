@@ -1,0 +1,263 @@
+/* ---------
+Font Settings
+--------- */
+@font-face {
+    font-family:'edmondsans_regularregular';
+    src: url('../fonts/edmondsans-regular-webfont.eot');
+    src: url('../fonts/edmondsans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/edmondsans-regular-webfont.woff') format('woff'),
+         url('../fonts/edmondsans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/edmondsans-regular-webfont.svg#edmondsans_regularregular') format('svg');
+    font-weight:normal;
+    font-style:normal }
+
+@font-face {
+    font-family: 'edmondsans_mediumregular';
+    src: url('../fonts/edmondsans-medium-webfont.eot');
+    src: url('../fonts/edmondsans-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/edmondsans-medium-webfont.woff') format('woff'),
+         url('../fonts/edmondsans-medium-webfont.ttf') format('truetype'),
+         url('../fonts/edmondsans-medium-webfont.svg#edmondsans_mediumregular') format('svg');
+    font-weight:normal;
+    font-style:normal }
+    
+@font-face {
+    font-family: 'edmondsans_boldregular';
+    src: url('../fonts/edmondsans-bold-webfont.eot');
+    src: url('../fonts/edmondsans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/edmondsans-bold-webfont.woff') format('woff'),
+         url('../fonts/edmondsans-bold-webfont.ttf') format('truetype'),
+         url('../fonts/edmondsans-bold-webfont.svg#edmondsans_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal }
+    
+/* Global font settings */
+body,
+input[type="text"],
+input[type="textarea"],
+input[type="email"] { font:100%/1.5 "edmondsans_regularregular", Arial, sans-serif }
+
+h1, h2, h3, h4, h5, h6 { font-family:"edmondsans_regularregular", Arial, serif }
+
+footer { font:18px "edmondsans_mediumregular", Arial, sans-serif; text-align:center }
+
+#branding h2,
+input[type="submit"],
+input[type="submit"]:hover,
+.btn a { font-family:"edmondsans_mediumregular", Arial, sans-serif }
+
+#branding p,
+#sidebar #primary a.active { font-family:"edmondsans_boldregular", Arial, sans-serif }
+
+/* --------------------------- 
+Base extended: 
+Bones from skeleton
+--------------------------- */
+/* Self Clearing Goodness */
+.container:after { content:"\0020"; display:block; height:0; clear:both; visibility:hidden }
+
+/* Use clearfix class on parent to clear nested columns, or wrap each row of columns in a <div class="row"> */
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after { content:'\0020'; display:block; overflow:hidden; visibility:hidden; width:0; height:0 }
+    
+.row:after,
+.clearfix:after { clear:both }
+    
+.row,
+.clearfix { zoom:1 }
+
+/* You can also use a <br class="clear" /> to clear columns */
+.clear { clear:both; display:block; overflow:hidden; visibility:hidden; width:0; height:0 }
+
+/* ----------------------------
+Base overrides:
+Defined in skeleton/base.css 
+---------------------------- */
+body { color:rgb(61,61,62) }
+
+h1, h2, h3, h4, h5, h6 { /*Font family set in fonts section*/ font-weight:normal; color:rgb(91,91,92) }
+
+h1 { font-size:36px; line-height:42px }
+h2 { font-size:24px; line-height:30px }
+h3 { font-size:16px; font-weight:bold; line-height:20px }
+h4 { font-size:14px }
+h5 { font-size:12px }
+h6 { font-size:12px }
+
+p { margin:0 0 32px 0 }
+ul + h1,
+ol + h1,
+dl + h1 { margin-top:40px }
+
+blockquote, blockquote p { font-size:16px; line-height:24px }
+blockquote { margin:0 0 24px; padding:9px 20px 0 19px; border-left:1px solid #ddd } /* check this */
+
+article ul,
+article ol { list-style-type:disc; margin-left:20px }
+
+input[type="submit"] { 
+	border:none;
+	text-shadow:none; 
+	font-size:16px; 
+	font-weight:normal; 
+	margin-bottom:0 }
+input[type="submit"]:hover { border:none }
+
+input[type="text"],
+input[type="textarea"],
+input[type="email"] { 
+	margin-bottom:0; 
+	padding:11px 10px 10px 10px; 
+	color:rgb(61,61,62);
+	/*Font family set in fonts section*/ }	
+
+/* ------------------------
+Layout 
+------------------------ */
+body { text-align:center }
+.content-wrap { margin:0 auto; text-align:left; width:960px; }
+.container { margin-top:68px; }
+
+header { padding:44px 0 }
+
+article { width:740px; float:right }
+	.one-column { padding:0 50px 0 40px }
+	.two-column { }
+	.two-column .content { width:310px; float:left; padding:0 40px }
+	.two-column aside { width:310px; float:right; padding:0 40px 0 0 }
+		.narrow .content { width:440px }
+		.narrow aside { margin-right:10px; width:170px }
+	hr { width:860px; margin:0 0 48px -170px }
+
+#sidebar { width:220px }
+	#primary ul { padding:8px 20px 8px 20px }
+	#primary li { margin:0; padding:0 }
+	#primary li a { border-bottom:1px solid rgb(97,97,97); padding:8px 0 }
+	#primary li:last-child a { border-bottom:0 }
+	
+form { margin-bottom:48px }
+	label { color:rgb(91,91,92); font-size:18px }
+	input[type="text"],
+	input[type="textarea"],
+	input[type="email"] { width:100%; margin-top:2px; font-size:18px }
+
+/* ------------------------ 
+Theme 
+------------------------ */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { text-decoration:none }
+
+header,
+footer,
+#sidebar,
+.wrapper { color:rgb(255,255,255); background:rgb(59,59,60) }
+
+footer { padding:27px 0 }
+
+#branding { position:relative; padding:44px 260px 25px 260px; text-align:center; font-size:18px }
+
+#branding h1 a { 
+	display:block;
+	margin:0 0 53px 53px;
+	text-indent:-999em;
+	color:rgb(255,255,255);
+	width:371px;
+	height:127px;
+	background:url('../images/whiskers-logo.png') top left no-repeat }
+
+#branding h2,
+#branding ul { margin-bottom:48px }
+
+#branding h2 {  
+	font-size:18px; 
+	line-height:1.3em; 
+	color:rgb(255,255,255) }
+	
+#branding ul li { margin:0; float:left }
+#branding ul li.last { float:right }
+
+#branding img { position:absolute; bottom:-54px; left:537px; }
+
+/* ------------------------ 
+Modules 
+-------------------------*/
+#notify-me input[type="submit"] { float:right }
+#notify-me input[type="text"],
+#notify-me input[type="email"] { width:438px; float:left }
+
+.image-grid img { margin:0 40px 41px 0 }
+.image-grid img.last,
+aside .image-grid img { margin:0 0 41px 0 }
+
+/* ------------------------ 
+Uniques  
+------------------------ */
+
+/* ------------------------ 
+States 
+------------------------ */
+form, 
+.btn, 
+.btn a { -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px }
+
+form, 
+.btn { padding:20px; background:rgb(237,237,237) }
+
+input[type="submit"],
+input[type="submit"]:hover,
+.btn a { 
+	background:#414141; 
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#707070), to(#414141));
+	background:-webkit-linear-gradient(top, #707070, #414141);
+	background:-moz-linear-gradient(top, #707070, #414141); 
+	background:-ms-linear-gradient(top, #707070, #414141);
+	background:-o-linear-gradient(top, #707070, #414141);
+	display:block;
+	padding:15px 20px;
+	text-align:center; 
+	color:rgb(255,255,255);
+	text-decoration:none; 
+	line-height:20px }
+	
+input[type="submit"]:hover,
+.btn a:hover {
+	background:#414141; 
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#484848), to(#191919));
+	background:-webkit-linear-gradient(top, #484848, #191919);
+	background:-moz-linear-gradient(top, #484848, #191919); 
+	background:-ms-linear-gradient(top, #484848, #191919);
+	background:-o-linear-gradient(top, #484848, #191919) }
+
+/* buttons */
+.btn { margin-bottom:32px }
+.btn.multiline a { padding:5px 20px }
+	
+#branding .btn { padding:0; background:rgb(59,59,60) }
+#branding .btn a {
+	width:210px; 
+	background:#e3e3e3; 
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#e3e3e3));
+	background:-webkit-linear-gradient(top, #e3e3e3, #ffffff);
+	background:-moz-linear-gradient(top, #e3e3e3, #ffffff); 
+	background:-ms-linear-gradient(top, #e3e3e3, #ffffff);
+	background:-o-linear-gradient(top, #e3e3e3, #ffffff);
+	padding:15px 0; 
+	color:rgb(59,59,60);  }
+	
+#branding .btn a:hover {
+	background:#e3e3e3;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#d9d9d9));
+	background:-webkit-linear-gradient(top, #e3e3e3, #d9d9d9);
+	background:-moz-linear-gradient(top, #e3e3e3, #d9d9d9); 
+	background:-ms-linear-gradient(top, #e3e3e3, #d9d9d9);
+	background:-o-linear-gradient(top, #e3e3e3, #d9d9d9) }
+
+/* forms */	
+input[type="submit"] { width:130px; }
+
+/* primary menu */
+#sidebar #primary a { display:block; color:rgb(255,255,255); text-decoration:none }
+
+/* Javascript joints */
+.is-hidden { display:none }
