@@ -170,8 +170,8 @@ footer { padding:1.6875em 0 }
 /* ------------------------ 
 Modules 
 -------------------------*/
-form[id="notify-me"] input[type="text"],
-form[id="notify-me"] input[type="email"] { margin-bottom:1.25em; float:left }
+.notify-me input[type="text"],
+.notify-me input[type="email"] { margin-bottom:1.25em; float:left }
 
 .image-grid.small,
 .image-grid.medium,
@@ -271,9 +271,9 @@ Media Queries
 }
 
 @media all and (min-width:479px) {
-	form[id="notify-me"] input[type="submit"] { float:left }
-	form[id="notify-me"] input[type="text"],
-	form[id="notify-me"] input[type="email"] { margin-right:1.25em; margin-bottom:0 }
+	.notify-me input[type="submit"] { float:left }
+	.notify-me input[type="text"],
+	.notify-me input[type="email"] { margin-right:1.25em; margin-bottom:0 }
 
 	input[type="submit"] { width:8.125em }
 }
@@ -309,9 +309,9 @@ Media Queries
 	.no-touch .branding .last { float:right }
 	.no-touch .branding .btn a { width:11.67em }
 	
-	form[id="notify-me"] input[type="submit"] { float:right }
-	form[id="notify-me"] input[type="text"],
-	form[id="notify-me"] input[type="email"] { width:12.4em; margin-right:0; margin-bottom:0  }	
+	.notify-me input[type="submit"] { float:right }
+	.notify-me input[type="text"],
+	.notify-me input[type="email"] { width:12.4em; margin-right:0; margin-bottom:0  }	
 	
 	.image-grid.small,
 	.image-grid.medium { margin:0; text-align:left }
@@ -334,8 +334,8 @@ Media Queries
 		
 	.branding { padding:2.42em 14.45em 1.5625em 14.45em }
 		
-	form[id="notify-me"] input[type="text"],
-	form[id="notify-me"] input[type="email"] { width:24.25em; float:left }
+	.notify-me input[type="text"],
+	.notify-me input[type="email"] { width:24.25em; float:left }
 	
 	.image-grid.small { width:100%; padding-left:0 }
 	
