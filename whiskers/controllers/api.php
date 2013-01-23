@@ -52,6 +52,7 @@ class Api extends CI_Controller {
 
         $driver = $this->input->post('driver');
 
+		// This calls save_post() in the appropriate service's driver
         if ( ! $data = $this->whiskers_post->$driver->save_post($this->data['text']))
         {
             $this->data['message'] = "Failed to post to {$this->data['driver']}.";
