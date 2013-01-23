@@ -88,7 +88,7 @@ class Admin extends CI_Controller {
         $consumer_key = $appnet_settings->appnet_consumer_key;
         $consumer_secret = $appnet_settings->appnet_consumer_secret;
 
-        /* Build TwitterOAuth object with client credentials. */
+        // Build OAuth object with client credentials
         
 		$provider = $this->oauth2->provider('appnet', array(
 			'id' => $consumer_key,
@@ -104,25 +104,22 @@ class Admin extends CI_Controller {
 		// Creating an access token from the code
 		$appnet_settings->token = $provider->access($this->input->get('code'));
 
-
-//		$token = $provider->access($_GET['code']);
-
 		// Use this object to try and get some user details (username, full name, etc)
 		$appnet_settings->user = $provider->get_user_info($appnet_settings->token);
 
 		// Look for a user
           
-            $this->settings->rm('appnet');
-            $this->settings->set('appnet', array(
-                'token' => $appnet_settings->token,
-                'appnet_consumer_key' => $consumer_key,
-                'appnet_consumer_secret' => $consumer_secret,
-                'user' => $appnet_settings->user
-            ));
+        $this->settings->rm('appnet');
+        $this->settings->set('appnet', array(
+            'token' => $appnet_settings->token,
+            'appnet_consumer_key' => $consumer_key,
+            'appnet_consumer_secret' => $consumer_secret,
+            'user' => $appnet_settings->user
+        ));
             
-            $this->session->setMessage('Successfully authorized Appnet.', 'success');
+        $this->session->setMessage('Successfully authorized Appnet.', 'success');
 
-            redirect('/admin');            
+        redirect('/admin');            
     }
     
     
