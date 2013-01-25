@@ -2,8 +2,8 @@ jQuery(document).ready(function($) {
     /*
         Stacks posting interface
     */
-    $('.driver a.remove').click(function() {
-        $(this).parent('header').parent('.driver').fadeOut(400, function() { $(this).remove(); });
+    $('.driver .btn').click(function() {
+        $(this).parent('div').parent('.driver').fadeOut(400, function() { $(this).remove(); });
         return false;
     });
 
@@ -67,4 +67,11 @@ jQuery(document).ready(function($) {
 
         return false;
     });
+    
+    // Mobile reset article padding 
+	if ($('form').hasClass('service-posting')) {
+		$('body').addClass('posting');
+		$('footer').addClass('is-hidden');
+	}
+     
 });

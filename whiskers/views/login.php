@@ -7,5 +7,5 @@
 		<label for="password" class="is-hidden">Password</label>
 		<input type="password" name="login[password]" value="" placeholder="Password" id="password">
 	</div>
-	<input id="post-form-submit" onclick="document.getElementById('face').className = 'chesire'" name="op" type="submit" value="Login" />
+	<input id="post-form-submit" onclick="document.getElementById('face').className = 'chesire'" name="op" type="submit" value="Sign in" />
 </form>
