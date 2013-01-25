@@ -8,7 +8,7 @@ class Api extends CI_Controller {
     {
         parent::__construct();
 
-        // Dependecies
+        // Dependencies
         $this->load->helper('url');
         $this->load->helper('whiskers');
         $this->load->library('session');
@@ -52,6 +52,7 @@ class Api extends CI_Controller {
 
         $driver = $this->input->post('driver');
 
+		// This calls save_post() in the appropriate service's driver
         if ( ! $data = $this->whiskers_post->$driver->save_post($this->data['text']))
         {
             $this->data['message'] = "Failed to post to {$this->data['driver']}.";

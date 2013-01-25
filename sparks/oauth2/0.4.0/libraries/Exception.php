@@ -80,4 +80,8 @@ class OAuth2_Exception extends Exception {
 		return $str . $this->message;
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> upstream/master

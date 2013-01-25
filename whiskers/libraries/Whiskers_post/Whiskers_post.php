@@ -6,7 +6,8 @@ class Whiskers_post extends CI_Driver_Library {
       
     public $valid_drivers  = array(
         'whiskers_post_twitter',
-        'whiskers_post_facebook'
+        'whiskers_post_facebook',
+        'whiskers_post_appnet'
     );
 
     public function __construct()
