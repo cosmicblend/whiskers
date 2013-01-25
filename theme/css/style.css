@@ -34,19 +34,19 @@ Font Settings
 /* Global font settings */
 body,
 input[type="text"],
-input[type="textarea"],
+textarea,
 input[type="password"],
 input[type="email"] { font:100%/1.5 "edmondsans_regularregular", Arial, sans-serif }
 
 h1, h2, h3, h4, h5, h6 { font-family:"edmondsans_regularregular", Arial, serif }
 
-footer { font:1.125em "edmondsans_mediumregular", Arial, sans-serif; text-align:center }
-
+footer,
 .branding h2,
 input[type="submit"],
 input[type="submit"]:hover,
 select,
-.btn a { font-family:"edmondsans_mediumregular", Arial, sans-serif }
+.btn a,
+p[id="count"] { font-family:"edmondsans_mediumregular", Arial, sans-serif }
 
 .branding p { font-family:"edmondsans_boldregular", Arial, sans-serif; }
 .branding p span { font-family:"edmondsans_regularregular", Arial, serif }
@@ -108,11 +108,11 @@ input[type="submit"] {
 input[type="submit"]:hover { border:none }
 
 input[type="text"],
-input[type="textarea"],
+textarea,
 input[type="password"],
 input[type="email"],
 select { 
-	width:92%;
+	width:93%;
 	margin-bottom:0; 
 	padding:0.6875em 0.625em 0.625em 0.625em; 
 	color:rgb(61,61,62);
@@ -127,7 +127,8 @@ body { }
 
 header { }
 
-article { padding:1.25em } /* Chet ask semantic thoughts on article wrap in app */
+article { padding:1.25em } 
+.posting article { padding:1.25em 0 0 0 } /* Chet ask semantic thoughts on article wrap in app */
 
 form { }
 
@@ -157,7 +158,7 @@ footer,
 nav[id="primary"],
 .wrapper { color:rgb(255,255,255); background:rgb(59,59,60) }
 
-footer { }
+footer { font:1.125em; text-align:center }
 
 .branding { padding:2.75em 1.25em 1.5625em 1.25em; text-align:center; font-size:1.125em }
 
@@ -204,7 +205,44 @@ form[id="add_service"] p { margin-bottom:0.875em }
 
 .accounts-list li div { float:left }
 
+/* Remove Service */
 form[id="remove-service"] input[type="submit"] { float:right; width:5.6875em }
+
+/* Posting Drivers */
+.service-posting { margin-bottom:0 }
+
+div[id="drivers"] { background:rgb(237,237,237) }
+div[id="drivers"] ul { margin:0; padding:0; list-style-type:none }
+
+div[id="drivers"] li {
+	border-top:1px solid rgb(255,255,255); 
+	border-bottom:1px solid rgb(210,210,210);  
+	margin:0; 
+	padding:1em 1.25em
+}
+div[id="drivers"] li .row { background:rgb(255,255,255); border:1px solid rgb(210,210,210) }
+div[id="drivers"] li .service-icons { 
+	float:left;
+	margin:0.5em;
+	width:50px; 
+	height:50px; 
+	background:rgb(90,90,90) }
+div[id="drivers"] li textarea { float:left; width:9.5em; margin:0.5em 0 }
+
+div[id="drivers"] .btn { 
+	float:right;
+	margin:0.5em 0.5em 0.5em 0;
+	padding:0;
+	border:1px solid rgb(210,210,210)
+}
+div[id="drivers"] .btn a { padding:0 0.23em 0.125em 0.25em; font-size:1.25em; line-height:1em }
+
+.all-drivers_text { height:7em }
+
+/* Posting Utilities */
+.post-utilities { position:relative; margin:0.5em 1.25em; text-align:center }
+.post-utilities p { margin-bottom:0; padding:0.5em 0 }
+#post-form-submit { width:4.6875em; position:absolute; top:0; right:0; padding:0.5em 0 }
 
 /* ------------------------ 
 States 
@@ -263,7 +301,11 @@ Media Queries
 ------------------------ */
 @media all and (min-width:479px) {
 	input[type="text"],
-	input[type="textarea"],
+	textarea,
 	input[type="password"],
 	input[type="email"] { width:94% }
+	
+	div[id="drivers"] li textarea { float:left; width:19.5em; margin:0.5em 0 }
+	
+	.all-drivers_text { width:95% }
 }

@@ -1,25 +1,38 @@
-<form id="post" action="<?php echo site_url() ?>" method="post" data-endpoint="<?php echo $base_url ?>api/post">
-    <div id="count">0 chars</div>
-    <textarea id="text" name="text" rows="4" cols="60"></textarea>
+<form id="post" class="service-posting" action="<?php echo site_url() ?>" method="post" data-endpoint="<?php echo $base_url ?>api/post">
+	
+	<div id="drivers">	
+		<?php if ($valid_drivers) : ?>
+		<ul>		
+			<?php foreach ($valid_drivers as $driver => $obj) : ?>
+			<li class="driver">
+            	
+            	<?php //echo ucwords($driver) ?>            	
+            	<div class="row">
+            		<div class="service-icons">
+            		 <p>serv</p>
+            		</div>
+            		
+            		<textarea id="<?php echo $driver ?>_text" name="<?php echo $driver ?>_status" data-driver="<?php echo $driver ?>"></textarea>
+            		
+            		<div class="btn"><a href="#">x</a></div>
+            	</div>
+            	
+            	</li>
+            	<?php endforeach; ?>
+		</ul>
+		<?php else: ?>
+		<p>You have to add an account before you can post. Visit the admin page to <a href="<?php echo site_url("/admin") ?>">manage your accounts</a>.</p>
+		<?php endif; ?>
+	</div>
 
-    <h3>Post to &raquo;</h3>
+	<div class="post-utilities">
+		<p id="count">0 Chars</p>
+		
+		<input id="post-form-submit" name="op" type="submit" value="Post" />		
+	</div>
+	
+	<div style="">
+		<textarea id="text" name="text" class="all-drivers_text"></textarea>
+	</div>
 
-    <div id="drivers">
-        <?php if ($valid_drivers) : ?>
-        <?php foreach ($valid_drivers as $driver => $obj) : ?>
-        <div class="driver triangle-border left">
-            <header>
-                <h4>To <?php echo ucwords($driver) ?></h4>
-                <a href="#" class="remove">x</a>
-            </header>
-
-            <textarea id="<?php echo $driver ?>_text" name="<?php echo $driver ?>_status" class="driver-text" data-driver="<?php echo $driver ?>" rows="4" cols="45"></textarea>
-        </div>
-        <?php endforeach; ?>
-        <?php else: ?>
-        <p>You have to add an account before you can post. Visit the admin page to <a href="<?php echo site_url("/admin") ?>">manage your accounts</a>.</p>
-        <?php endif; ?>
-    </div>
-
-    <input id="post-form-submit" onclick="document.getElementById('face').className = 'chesire'" name="op" type="submit" value="Post all" />
 </form>
