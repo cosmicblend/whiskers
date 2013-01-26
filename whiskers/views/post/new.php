@@ -12,7 +12,7 @@
             		 <p>serv</p>
             		</div>
             		
-            		<textarea id="<?php echo $driver ?>_text" name="<?php echo $driver ?>_status" data-driver="<?php echo $driver ?>"></textarea>
+            		<textarea id="<?php echo $driver ?>_text" class="driver-text" name="<?php echo $driver ?>_status" data-driver="<?php echo $driver ?>"></textarea>
             		
             		<div class="btn"><a href="#">x</a></div>
             	</div>
