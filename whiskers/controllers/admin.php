@@ -111,7 +111,7 @@ class Admin extends CI_Controller {
           
         $this->settings->rm('appnet');
         $this->settings->set('appnet', array(
-            'token' => $appnet_settings->token,
+			'token' => $appnet_settings->token->access_token,
             'appnet_consumer_key' => $consumer_key,
             'appnet_consumer_secret' => $consumer_secret,
             'user' => $appnet_settings->user
