@@ -31,8 +31,6 @@
 		<input id="post-form-submit" name="op" type="submit" value="Post" />		
 	</div>
 	
-	<div style="">
-		<textarea id="text" name="text" class="all-drivers_text"></textarea>
-	</div>
+	<textarea id="text" name="text" class="all-drivers_text"></textarea>
 
 </form>

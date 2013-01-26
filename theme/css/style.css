@@ -242,7 +242,7 @@ div[id="drivers"] .btn a { padding:0 0.23em 0.125em 0.25em; font-size:1.25em; li
 /* Posting Utilities */
 .post-utilities { position:relative; margin:0.5em 1.25em; text-align:center }
 .post-utilities p { margin-bottom:0; padding:0.5em 0 }
-#post-form-submit { width:4.6875em; position:absolute; top:0; right:0; padding:0.5em 0 }
+.post-utilities #post-form-submit { width:4.6875em; position:absolute; top:0; right:0; padding:0.5em 0 }
 
 /* ------------------------ 
 States 
@@ -308,4 +308,17 @@ Media Queries
 	div[id="drivers"] li textarea { float:left; width:19.5em; margin:0.5em 0 }
 	
 	.all-drivers_text { width:95% }
+}
+
+
+/* temp */
+.error {
+  border-color:lightCoral;
+  color:lightCoral;
+}
+.success {
+  background:#6fa;
+  border-color:#061;
+  border-width:1px;
+  color:#061;
 }
