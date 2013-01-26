@@ -12,7 +12,7 @@
             		 <p>serv</p>
             		</div>
             		
-            		<textarea id="<?php echo $driver ?>_text" name="<?php echo $driver ?>_status" data-driver="<?php echo $driver ?>"></textarea>
+            		<textarea id="<?php echo $driver ?>_text" class="driver-text" name="<?php echo $driver ?>_status" data-driver="<?php echo $driver ?>"></textarea>
             		
             		<div class="btn"><a href="#">x</a></div>
             	</div>
@@ -31,8 +31,6 @@
 		<input id="post-form-submit" name="op" type="submit" value="Post" />		
 	</div>
 	
-	<div style="">
-		<textarea id="text" name="text" class="all-drivers_text"></textarea>
-	</div>
+	<textarea id="text" name="text" class="all-drivers_text"></textarea>
 
 </form>
