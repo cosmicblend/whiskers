@@ -1,3 +1,4 @@
+<div class="admin-forms">
 <h2>App.net App</h2>
 <form name="appnet_app" action="<?php echo site_url("admin/appnet_app"); ?>" method="post">
 	<div class="messages">
@@ -29,3 +30,4 @@
 	
 	<input type="submit" value="Save details" />
 </form>
+</div>

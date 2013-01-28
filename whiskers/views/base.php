@@ -21,7 +21,7 @@
 	<![endif]-->
 </head>
 
-<body class="row wrapper">
+<body class="row wrapper mobile-screens">
 	<header class="row branding">
 		<h1><?php echo anchor('post', 'Whiskers'); ?></h1>
 		<?php if ($authenticated): ?>
