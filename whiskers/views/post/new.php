@@ -1,16 +1,13 @@
-<form id="post" class="service-posting" action="<?php echo site_url() ?>" method="post" data-endpoint="<?php echo $base_url ?>api/post">
+<form id="post" class="posting-main" action="<?php echo site_url() ?>" method="post" data-endpoint="<?php echo $base_url ?>api/post">
 	
-	<div id="drivers">	
+	<div id="drivers" class="app-lists mobile">	
 		<?php if ($valid_drivers) : ?>
 		<ul>		
 			<?php foreach ($valid_drivers as $driver => $obj) : ?>
 			<li class="driver">
-            	
-            	<?php //echo ucwords($driver) ?>            	
+            	            	
             	<div class="row">
-            		<div class="service-icons">
-            		 <p>serv</p>
-            		</div>
+            		<div class="service-icons <?php echo $driver ?>-icon"></div>
             		
             		<textarea id="<?php echo $driver ?>_text" class="driver-text" name="<?php echo $driver ?>_status" data-driver="<?php echo $driver ?>"></textarea>
             		
@@ -32,5 +29,4 @@
 	</div>
 	
 	<textarea id="text" name="text" class="all-drivers_text"></textarea>
-
 </form>

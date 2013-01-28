@@ -121,14 +121,15 @@ select {
 /* ------------------------
 Layout 
 ------------------------ */
-body { }
+html,
+body { height:100%; }
 .content-wrap { }
 .container { }
 
 header { }
 
-article { padding:1.25em } 
-.posting article { padding:1.25em 0 0 0 } /* Chet ask semantic thoughts on article wrap in app */
+article { padding:0 /*padding:1.25em*/ 
+} /* Chet ask semantic thoughts on article wrap in app */
 
 form { }
 
@@ -187,12 +188,17 @@ Modules
 	-moz-border-radius:0.375em; 
 	border-radius:0.375em }
 
-ul.messages li { word-wrap:normal }
+ul.messages { padding:1.125em 1.125em 0.25em 2.5em }
 
 p.messages,
 div.messages { padding-bottom:1.125em }
 
+ul.messages li { word-wrap:normal }
+
 form[id="add_service"] p { margin-bottom:0.875em }
+
+/* Sign In */
+.admin-forms { padding:1.25em }
 
 /* Accounts List */
 .accounts-list { margin:0; padding:0 }
@@ -209,40 +215,98 @@ form[id="add_service"] p { margin-bottom:0.875em }
 form[id="remove-service"] input[type="submit"] { float:right; width:5.6875em }
 
 /* Posting Drivers */
-.service-posting { margin-bottom:0 }
+.posting-main { margin-bottom:0; background:rgb(59,59,60) }
 
-div[id="drivers"] { background:rgb(237,237,237) }
-div[id="drivers"] ul { margin:0; padding:0; list-style-type:none }
+/* Posting History */
+.posting-history { 
+	margin-top:0; 
+	border-top:1px solid rgb(59,59,60); /*temp hack to shield extra padding */
+	background:rgb(59,59,60) }
 
-div[id="drivers"] li {
+/* App Lists */
+.app-lists.mobile { color:rgb(59,59,60); background:rgb(237,237,237) }
+
+.app-lists.mobile a { color:rgb(59,59,60); text-decoration:none }
+
+.app-lists.mobile ul { margin:0; padding:0; list-style-type:none }
+
+.app-lists.mobile li {
 	border-top:1px solid rgb(255,255,255); 
 	border-bottom:1px solid rgb(210,210,210);  
 	margin:0; 
-	padding:1em 1.25em
+	padding:0.5em 1.25em
 }
-div[id="drivers"] li .row { background:rgb(255,255,255); border:1px solid rgb(210,210,210) }
-div[id="drivers"] li .service-icons { 
-	float:left;
-	margin:0.5em;
-	width:50px; 
-	height:50px; 
-	background:rgb(90,90,90) }
-div[id="drivers"] li textarea { float:left; width:9.5em; margin:0.5em 0 }
+.app-lists.mobile .row { padding:0.25em; background:rgb(255,255,255); border:1px solid rgb(210,210,210) }
 
-div[id="drivers"] .btn { 
+.app-lists.mobile .service-icons { 
+	float:left;
+	width:2.1875em; /*35px*/ /*27px;*/ 
+	height:2.1875em; /*35px*/ /*27px;*/
+	margin-right:0.25em; 
+	/*background:rgb(90,90,90)*/ }
+	
+.app-lists.mobile .posting {
+	float:left; 
+	margin:0 0.25em 0 0;
+}	
+
+.app-lists.mobile .posting a {
+	/*width:12.56em;*/
+	display:block;
+	height:1.6875em /*2.1875em*/;
+	padding:0.5em 1.6875em 0 0; 
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	background:url('../images/whiskers-arrow.png') center right no-repeat; 
+	background-size:1.6875em; }	
+	
+.app-lists.mobile .row textarea { float:left }
+
+.app-lists.mobile .btn { 
 	float:right;
-	margin:0.5em 0.5em 0.5em 0;
+	/*margin:0.5em 0.5em 0.5em 0;*/
 	padding:0;
 	border:1px solid rgb(210,210,210)
 }
-div[id="drivers"] .btn a { padding:0 0.23em 0.125em 0.25em; font-size:1.25em; line-height:1em }
+.app-lists.mobile .btn a { padding:0 0.23em 0.125em 0.25em; font-size:1.25em; line-height:1em }
 
-.all-drivers_text { height:7em }
+.all-drivers_text { height:7em; padding:0.5em; border:hidden; }
+
+/* Services Sprite */
+.appnet-icon {
+	background:url('../images/whiskers-services-sprite.png') 0 0 no-repeat;
+	background-size:2.1875em 6.5625em /*35px 105px*/;
+}
+
+.facebook-icon {
+	background:url('../images/whiskers-services-sprite.png') 0 -2.1875em no-repeat;
+	background-size:2.1875em 6.5625em;
+}
+
+.twitter-icon {
+	background:url('../images/whiskers-services-sprite.png') 0 -4.375em no-repeat;
+	background-size:2.1875em 6.5625em;
+}
 
 /* Posting Utilities */
-.post-utilities { position:relative; margin:0.5em 1.25em; text-align:center }
+.post-utilities { 
+	position:relative; 
+	margin:0.5em 1.25em;
+	padding:0; 
+	text-align:center;
+	background:rgb(59,59,60) }
 .post-utilities p { margin-bottom:0; padding:0.5em 0 }
+.post-utilities nav { width:100%; }
+
+.post-utilities ul { margin:0; }
+
+.post-utilities li { margin:0; padding:0; list-style-type:none; }
+
 .post-utilities #post-form-submit { width:4.6875em; position:absolute; top:0; right:0; padding:0.5em 0 }
+.post-utilities .btn { width:5.6875em; padding:0 }
+.post-utilities .btn a { padding:0.5em 0 }
+.post-utilities .new-post { float:right }
 
 /* ------------------------ 
 States 
@@ -303,13 +367,8 @@ Media Queries
 	input[type="text"],
 	textarea,
 	input[type="password"],
-	input[type="email"] { width:94% }
-	
-	div[id="drivers"] li textarea { float:left; width:19.5em; margin:0.5em 0 }
-	
-	.all-drivers_text { width:95% }
+	input[type="email"] { width:94% }	
 }
-
 
 /* temp */
 .error {

@@ -66,12 +66,5 @@ jQuery(document).ready(function($) {
         });
 
         return false;
-    });
-    
-    // Mobile reset article padding 
-	if ($('form').hasClass('service-posting')) {
-		$('body').addClass('posting');
-		$('footer').addClass('is-hidden');
-	}
-     
+    });     
 });

@@ -1,3 +1,4 @@
+<div class="admin-forms">
 <h2>Twitter App</h2>
 <form name="twitter_app" action="<?php echo site_url("admin/twitter_app"); ?>" method="post">
 	<div class="messages">
@@ -30,3 +31,4 @@
 	
 	<input type="submit" value="Save details" />
 </form>
+</div>
